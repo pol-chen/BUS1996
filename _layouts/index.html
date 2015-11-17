@@ -11,11 +11,7 @@
 {% include header.html %}
 
 <section class="posts">
-    <article class="post">
-        <h2>{{ page.title }}</h2>
-        {{ content }}
-        <time>{{ page.date | date_to_string }}</time>
-    </article>
+    {{ content }}
 </section>
 
 {% include footer.html %}
