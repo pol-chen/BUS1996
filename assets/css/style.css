@@ -58,8 +58,12 @@ p {
     font-size: 14px;
     line-height: 20px;
 }
+p img {
+    max-width: 800px;
+}
 strong {
-    font-weight: 400;
+    /*color: #5BAAA7;*/
+    font-weight: 500;
 }
 time {
     display: block;
