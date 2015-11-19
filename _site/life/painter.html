@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<header>
+<header class="page-header">
     <h1><a href="/">- BUS1996 -</a></h1>
     <p>Polaris Chen's Blog</p>
 </header>
@@ -47,7 +47,28 @@
     </article>
 </section>
 
-<footer>
+<section>
+<div id="disqus_thread"></div>
+</section>
+
+<script>
+var disqus_config = function () {
+this.page.url = /life/painter.html;
+this.page.identifier = 2;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//bus1996.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<footer class="page-footer">
     <p>A Polaris Chen's Work &copy 2015, Polaris Chen</p>
 </footer>
 

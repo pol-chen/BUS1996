@@ -7,17 +7,18 @@ body {
     background: #F2F2F2;
     font-family: "Open Sans", "Lantinghei SC", "Microsoft Yahei Light", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-header,
-footer,
-.posts {
+.page-header,
+.page-footer,
+.posts,
+#disqus_thread {
     margin: 0 auto;
     width: 800px;
 }
-header {
+.page-header {
     padding: 40px 0;
     text-align: center;
 }
-footer {
+.page-footer {
     color: #637373;
     padding: 40px 0;
 }
@@ -65,9 +66,18 @@ strong {
     /*color: #5BAAA7;*/
     font-weight: 500;
 }
-time {
-    display: block;
+.post-footer {
     padding: 20px 0;
     font-size: 12px;
     color: #637373;
+}
+.post-footer a {
+    color: #637373;
+}
+.post-footer a:hover {
+    color: #5BAAA7;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
