@@ -10,6 +10,7 @@ body {
 .page-header,
 .page-footer,
 .posts,
+.post-navigation,
 #disqus_thread {
     margin: 0 auto;
     width: 800px;
@@ -65,6 +66,28 @@ p img {
 strong {
     /*color: #5BAAA7;*/
     font-weight: 500;
+}
+.post-navigation {
+    overflow: hidden;
+    clear: both;
+}
+.post-navigation a {
+    width: auto;
+    margin: 8px 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #F2F2F2;
+    background: #5BAAA7;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.post-navigation .prev {
+    float: left;
+}
+.post-navigation .next {
+    float: right;
 }
 .post-footer {
     padding: 20px 0;

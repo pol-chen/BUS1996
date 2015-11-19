@@ -24,6 +24,15 @@
     </footer>
 </section>
 
+<section class="post-navigation">
+    {% if page.previous.title != null %}
+    <a class="prev" href="{{ site.baseurl }}{{ page.previous.url }}">&lt;&nbsp;{{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.title != null %}
+    <a class="next" href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}&nbsp;&gt;</a>
+    {% endif %}
+</section>
+
 <section>
 <div id="disqus_thread"></div>
 </section>
