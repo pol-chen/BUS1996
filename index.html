@@ -14,7 +14,13 @@ title: BUS1996 - Polaris Chen's Blog
     {% endif %}
     </div>
     <a class="more" href="{{ site.baseurl }}{{ post.url }}">Read more...</a>
-    <time>{{ post.date | date_to_string }}</time>
+    <footer class="post-footer">
+        <time>{{ post.date | date_to_string }}</time>
+        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+        <a href="{{ site.baseurl }}{{ post.category }}">{{ post.category | upcase }}</a>
+        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+        <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread">0 Comments</a>
+    </footer>
 </article>
 {% endfor %}
 

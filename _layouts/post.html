@@ -14,8 +14,14 @@
     <article class="post">
         <h2>{{ page.title }}</h2>
         {{ content }}
-        <time>{{ page.date | date_to_string }}</time>
     </article>
+    <footer class="post-footer">
+        <time>{{ page.date | date_to_string }}</time>
+        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+        <a href="{{ site.baseurl }}{{ page.category }}">{{ page.category | upcase }}</a>
+        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+        <a href="{{ site.baseurl }}{{ page.url }}#disqus_thread">0 Comments</a>
+    </footer>
 </section>
 
 <section>
@@ -37,6 +43,7 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<script id="dsq-count-scr" src="//bus1996.disqus.com/count.js" async></script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 {% include footer.html %}
