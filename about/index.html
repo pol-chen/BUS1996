@@ -1,0 +1,35 @@
+---
+layout: page
+category: about
+glyph: about
+quote: Polaris Chen
+title: 关于我
+date: 2016-02-16
+imgs: 
+---
+
+<div class="card-1">
+    <div class="card-content">
+        {% if page.imgs %}
+        <div class="post-wall">
+            {% for img in page.imgs %}
+            <div class="rect{% decrement i %}" style="background-image: url({{ site.baseurl }}/assets/img/about/{{ img }})"></div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <h1>{{ page.title }}</h1>
+
+        <div class="post-info">
+            <time>{{ page.date | date_to_string }}</time>
+            <span>&nbsp;-&nbsp;</span>
+            <span>{{ page.category | upcase }}</span>
+        </div>
+
+        <article class="post-content">
+            
+            <p>Be patient, if you wanna know me.</p>
+
+        </article>
+    </div>
+</div>

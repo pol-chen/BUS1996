@@ -1,0 +1,25 @@
+---
+layout: page
+glyph: friends
+quote: Dear friends
+title: Friends
+---
+
+{% for friend in site.data.friends %}
+<div class="card-2">
+    <div class="card-content-center">
+        {% if friend.avatar %}
+        <div class="post-avatar" style="background-image: url({{ site.friendimgurl }}/{{ friend.avatar}});">
+        </div>
+        {% else %}
+        <div class="post-avatar">
+            <span>{{ friend.name }}</span>
+        </div>
+        {% endif %}
+        <h1>{{ friend.name }}</h1>
+        <div class="post-info">
+            <a href="{{ friend.link }}">{{ friend.blog }}&nbsp;-&nbsp;{{ friend.link | remove_first: "http://" | remove_first: "https://"}}</a>
+        </div>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,36 @@
+---
+layout: page
+glyph: works
+quote: Light the world
+title: Works
+---
+
+{% for post in site.categories.work %}
+<div class="card-2">
+    {% if post.img %}
+    <div class="card-thumbnail" style="background-image: url({{ site.postimgurl }}/{{ post.img }});">
+    </div>
+    {% else %}
+    {% endif %}
+
+    <div class="card-content">
+        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <div class="post-info">
+            <time>{{ post.date | date_to_string }}</time>
+            <span>&nbsp;-&nbsp;</span>
+            <a href="{{ site.baseurl }}{{ post.category }}">{{ post.tag | upcase }}</a>
+        </div>
+        <div class="post-excerpt">
+        {% if post.content contains "<!-- more -->" %}
+            {{ post.content | split:"<!-- more -->" | first  | strip_html }}...
+        {% else %}
+            {{ post.content | strip_html | truncatewords:100 }}
+        {% endif %}
+        </div>
+        <ul class="post-link">
+            <li><a href="{{ post.link }}">View the WORK PAGE &gt;&gt;&gt;</a></li>
+            <li><a href="{{ site.baseurl }}{{ post.url }}">View the related POST &gt;&gt;&gt;</a></li>
+        </ul>
+    </div>
+</div>
+{% endfor %}

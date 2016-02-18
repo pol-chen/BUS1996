@@ -1,0 +1,36 @@
+---
+layout: page
+glyph: posts
+quote: My stories
+title: Posts
+---
+
+{% for post in site.posts %}
+<div class="card-1">
+    {% if post.img %}
+    <div class="card-thumbnail" style="background-image: url({{ site.postimgurl }}/{{ post.img }});">
+    </div>
+    {% else %}
+    {% endif %}
+
+    <div class="card-content">
+        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <div class="post-info">
+            <time>{{ post.date | date_to_string }}</time>
+            <span>&nbsp;-&nbsp;</span>
+            <span>{{ post.category | upcase }}</span>
+        </div>
+        <div class="post-excerpt">
+        {% if post.content contains "<!-- more -->" %}
+            {{ post.content | split:"<!-- more -->" | first }}
+        {% else %}
+            {{ post.content | strip_html | truncatewords:100 }}
+        {% endif %}
+        </div>
+        
+        <ul class="post-link">
+            <li><a class="more" href="{{ site.baseurl }}{{ post.url }}">MORE &gt;&gt;&gt;</a></li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
