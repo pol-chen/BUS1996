@@ -1,2 +1,28 @@
-url: /
-permalink: /:categories/:title.html
+title: BUS1996
+description: Polaris Chen's Blog
+
+url: http://bus1996.me
+baseurl: /
+permalink: /:title.html
+
+markdown: redcarpet
+highlight: pygments
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+exclude:
+  - Guardfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+coverimgurl: "/assets/img/covers"
+postimgurl: "/assets/img/posts"
+friendimgurl: "/assets/img/friends"
