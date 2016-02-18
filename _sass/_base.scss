@@ -84,6 +84,9 @@ h1 {
 h2 {
   margin-top: 48px;
   font-size: rem(16);
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 /**
