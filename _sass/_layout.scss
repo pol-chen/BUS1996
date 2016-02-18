@@ -151,6 +151,10 @@
 	.card-thumbnail {
 		@include background-cover;
 	}
+	.card-img {
+		@include background-cover;
+		height: 560px;
+	}
 	.card-content {
 		padding: 50px;
 		background-color: $white-color;
