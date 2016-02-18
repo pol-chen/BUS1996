@@ -18,7 +18,7 @@ title: Works
         <div class="post-info">
             <time>{{ post.date | date_to_string }}</time>
             <span>&nbsp;-&nbsp;</span>
-            <a href="{{ site.baseurl }}{{ post.category }}">{{ post.tag | upcase }}</a>
+            <span>{{ post.tag | upcase }}</span>
         </div>
         <div class="post-excerpt">
         {% if post.content contains "<!-- more -->" %}
