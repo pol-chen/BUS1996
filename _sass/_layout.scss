@@ -1,0 +1,192 @@
+/*
+ * Page
+ */
+.page-header {
+  @include block-center;
+  width: $content-width;
+  padding: 90px 0 0 0;
+  text-align: center;
+  .page-title {
+  	margin-bottom: 12px;
+  	font-size: rem(20);
+  }
+  .page-subtitle {
+  	margin-bottom: 44px;
+  }
+  nav {
+  	@include block-center;
+  	display: block;
+  	width: 434px;
+  	margin-top: 25px;
+  	margin-bottom: 50px;
+  	padding: 0 12px;
+  	border: {
+  		top: 1px solid $text-color;
+  		bottom: 1px solid $text-color;
+  	}
+  	font-size: 0;
+  	a {
+  		display: inline-block;
+  		width: 80px;
+  		padding: 15px 0;
+  		font-size: rem(14);
+  	}
+  }
+}
+
+.page-cover {
+	$cover-height: 485px;
+	height: $cover-height;
+	@include background-cover("../img/covers/cover.jpeg");
+	text-align: center;
+	div {
+		font-family: $script-font-family;
+		font-size: rem(48);
+		color: $white-color;
+		line-height: $cover-height;
+	}
+}
+
+.page-footer {
+	@include block-center;
+	width: $content-width;
+	margin-top: 70px;
+	margin-bottom: 45px;
+	text-align: center;
+	.glyph {
+		margin-bottom: 34px;
+	}
+	.contact {
+		margin-top: 24px;
+    	font-size: 0;
+		a {
+			display: inline-block;
+			margin: 0 8px;
+		}
+	}
+}
+
+
+/*
+ * Post
+ */
+.post-info {
+	color: $gray-color;
+}
+
+.post-excerpt {
+	margin-top: 24px;
+	color: $gray-color;
+	font-weight: $font-weight-light;
+}
+
+.post-content {
+	@extend .post-excerpt;
+}
+
+.post-link {
+  margin-left: 0;
+	margin-top: 48px;
+	li {
+ 		list-style: none;
+		margin-bottom: 12px;
+	}
+	a {
+		display: inline-block;
+		width: auto;
+		padding: 1px;
+		background-color: $brand-color-light;
+		color: $white-color;
+		&:hover {
+			background-color: $brand-color;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.post-avatar {
+	$avatar-size: 120px;
+	@include size($avatar-size);
+	@include background-cover;
+	@include border-radius(50%);
+	@include block-center;
+	text-align: center;
+	margin-bottom: 24px;
+	span {
+		font-size: rem(48);
+		color: $white-color;
+		line-height: $avatar-size;
+	}
+}
+
+.post-wall {
+	margin-bottom: 28px;
+	font-size: 0;
+	%rect {
+		display: inline-block;
+		margin-right: 12px;
+		@include background-cover;
+	}
+	$rect-sizes: 180 90 50;
+	@for $i from 1 through length($rect-sizes) {
+		.rect-#{$i} {
+			@include size(nth($rect-sizes, $i));
+			@extend %rect;
+		}
+	}
+}
+
+.post-comment {
+	margin-top: 32px;
+}
+
+
+/*
+ * Card
+ */
+.card {
+	margin-top: 56px;
+	.card-thumbnail {
+		@include background-cover;
+	}
+	.card-content {
+		padding: 50px;
+		background-color: $white-color;
+		@include box-shadow(0 1px 1px 0 rgba(0,0,0,.1));
+	}
+}
+.card-1 {
+	@extend .card;
+	@include col(1, 1);
+	.card-thumbnail {
+		height: 256px;
+	}
+}
+.card-2 {
+	@extend .card;
+	@include col(1, 2);
+	.card-thumbnail {
+		height: 256px;
+	}
+	.card-content {
+		display: block;
+		height: auto;
+		.post-excerpt {
+			@include line-overflow(3);
+		}
+	}
+	.card-content-center {
+		@extend .card-content;
+		text-align: center;
+	}
+}
+
+
+/*
+ * Others
+ */
+.glyph {
+	@include block-center;
+}

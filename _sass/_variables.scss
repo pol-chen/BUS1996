@@ -1,0 +1,48 @@
+/*
+ * Colors
+ */
+$white-color:        #FFF;
+$gray-color:         #828179;
+$gray-color-light:   lighten($gray-color, 35%);
+$gray-color-dark:    darken($gray-color, 25%);
+
+$text-color:         #525048;
+$background-color:   #F5F4F1;
+$brand-color:        #89846C;
+$brand-color-light:  lighten($brand-color, 25%);
+
+$link-color:         $brand-color;
+$link-color-hover:   darken($link-color, 20);
+$link-color-visited: $link-color;
+$link-color-focus:   darken($link-color-visited, 10);
+
+
+/*
+ * Sizes
+ */
+$spacing-unit:  30px;
+$content-width: 1010px;
+
+$on-palm:       600px;
+$on-laptop:     800px;
+
+
+/*
+ * Fonts
+ */
+$font-weight-thin: 	      100;
+$font-weight-ultra-light: 200;
+$font-weight-light:       300;
+$font-weight-normal:      400;
+$font-weight-medium:      500;
+$font-weight-semi-bold:   600;
+$font-weight-bold:        700;
+$font-weight-ultra-bold:  800;
+$font-weight-black:       900;
+
+$base-font-family:   "Klartext Mono Light", "Pingfang SC", "Open Sans", "Lantinghei SC", "Microsoft Yahei Light", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$script-font-family: "Carefree", "Open Sans", "Lantinghei SC", "Microsoft Yahei Light", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$base-font-size:     .875rem;
+$base-font-weight:   $font-weight-normal;
+$small-font-size:    .75rem;
+$base-line-height:   1.5;

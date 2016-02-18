@@ -1,0 +1,15 @@
+$icon-width: 20px;
+$icon-names: email twitter weibo github dribbble behance rss;
+
+%icon {
+  @include size($icon-width);
+  background: url(../img/icons.svg) no-repeat;
+}
+
+@for $i from 1 through length($icon-names) {
+	$name: nth($icon-names, $i);
+	.icon-#{$name} {
+		@extend %icon;
+		background-position: (1-$i) * $icon-width;
+	}
+}

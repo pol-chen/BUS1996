@@ -1,0 +1,145 @@
+/*
+ * Media query
+ */
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+
+/*
+ * Styles
+ */
+@mixin block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin background-cover($url: "") {
+	background: {
+		size: cover;
+		color: $brand-color-light;
+		@if $url != "" { image: url($url); }
+		position: center;
+		repeat: no-repeat;
+	}
+}
+
+@mixin size($size...) {
+  $size: if(length($size) > 0, $size, auto);
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+
+  @if $width != auto {
+    $width: if(unitless($width), $width + px, $width);
+  }
+  @if $height != auto {
+    $height: if(unitless($height), $height + px, $height);
+  }
+
+  width: $width;
+  height: $height;
+}
+
+$em-base: 16 !default;
+@function rem($pxval) {
+  @return ($pxval / $em-base) * 1rem;
+}
+
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+
+$all: webkit moz ms o spec;
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit and $prefix-for-webkit == true {
+      -webkit-#{$property}: $value;
+    }
+    @else if $prefix == moz and $prefix-for-mozilla == true {
+      -moz-#{$property}: $value;
+    }
+    @else if $prefix == ms and $prefix-for-microsoft == true {
+      -ms-#{$property}: $value;
+    }
+    @else if $prefix == o and $prefix-for-opera == true {
+      -o-#{$property}: $value;
+    }
+    @else if $prefix == spec and $prefix-for-spec == true {
+      #{$property}: $value;
+    }
+    @else {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+@mixin border-radius($radius...) {
+  @include prefixer(border-radius, $radius, $all);
+}
+
+@mixin transition($property...) {
+  @include prefixer(transition, $property, $all);
+}
+
+@mixin box-shadow($shadow...) {
+  @include prefixer(box-shadow, $shadow, $all);
+}
+
+@mixin box-sizing($type:border-box) {
+  // border-box | padding-box | content-box
+  @include prefixer(box-sizing, $type, $all);
+}
+
+@mixin transform($property...) {
+  @include prefixer(transform, $property, $all);
+}
+
+
+/*
+ * Simple grid system
+ */
+@mixin row() {
+  font-size: 0;
+}
+
+@mixin col($col, $sum, $gap: 2em, $align: top, $first: false, $last: false) {
+  width: percentage($col/$sum);
+  font-size: $base-font-size;
+  display: inline-block;
+  vertical-align: $align;
+  @include box-sizing;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+}
+
+
+/*
+ * Text overflow
+ */
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@mixin line-overflow($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line; // Number of lines to show
+  -webkit-box-orient: vertical;
+}

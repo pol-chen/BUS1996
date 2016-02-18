@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+{% include header.html %}
+
+
+{% if page.cover %}
+<div class="page-cover" style="background-image: url({{ site.coverimgurl }}/{{ page.cover }});">
+{% else %}
+<div class="page-cover">
+{% endif %}
+
+	{% if page.quote %}
+    <div>{{ page.quote }}</div>
+	{% else %}
+	<div>A scene on my way</div>
+	{% endif %}
+
+</div>
+
+{{ content }}
+
+{% include footer.html %}
+{% include baidu-analytics.html %}
+{% include google-analytics.html %}
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+$glyph-width: 20px;
+$glyph-names: home posts works friends about post work;
+
+%glyph {
+  @include size($glyph-width);
+  background: url(../img/glyphs.svg) no-repeat;
+}
+
+@for $i from 1 through length($glyph-names) {
+	$name: nth($glyph-names, $i);
+	.glyph-#{$name} {
+		@extend %glyph;
+		background-position: (1-$i) * $glyph-width;
+	}
+}

@@ -1,3 +1,11 @@
 <footer class="page-footer">
-    <p>A Polaris Chen's Work &copy 2015, Polaris Chen</p>
+    {% include glyph.html %}
+    <div>A Polaris Chen's Work</div>
+    <div>&copy; 2015-2016 Polaris Chen</div>
+    <div class="contact">
+        {% for contact in site.data.contact %}
+    	<a href="{{ contact.link }}" class="icon-{{ contact.title }}"></a>
+        {% endfor %}
+    	<a href="{{ site.baseurl }}feed.xml" class="icon-rss"></a>
+    </div>
 </footer>

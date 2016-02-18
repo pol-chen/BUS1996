@@ -1,25 +1,5 @@
 ---
-layout: index
-title: BUS1996 - Polaris Chen's Blog
+layout: default
+glyph: home
+quote: Hi there
 ---
-
-{% for post in site.posts %}
-<article class="post">
-    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-    <div class="post-excerpt">
-    {% if post.content contains "<!-- more -->" %}
-        {{ post.content | split:"<!-- more -->" | first }}...
-    {% else %}
-        {{ post.content | strip_html | truncatewords:100 }}
-    {% endif %}
-    </div>
-    <a class="more" href="{{ site.baseurl }}{{ post.url }}">Read more...</a>
-    <footer class="post-footer">
-        <time>{{ post.date | date_to_string }}</time>
-        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-        <a href="{{ site.baseurl }}{{ post.category }}">{{ post.category | upcase }}</a>
-        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-        <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread">0 Comments</a>
-    </footer>
-</article>
-{% endfor %}

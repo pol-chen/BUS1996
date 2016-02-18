@@ -1,47 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-{% include css.html %}
-<title>{{ page.title }}</title>
+---
+layout: page
+---
 
-</head>
-<body>
+<div class="card-1">
 
-{% include header.html %}
-
-<section class="posts">
-    <article class="post">
-        <h2>{{ page.title }}</h2>
-        {{ content }}
-    </article>
-    <footer class="post-footer">
-        <time>{{ page.date | date_to_string }}</time>
-        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-        <a href="{{ site.baseurl }}{{ page.category }}">{{ page.category | upcase }}</a>
-        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-        <a href="{{ site.baseurl }}{{ page.url }}#disqus_thread">0 Comments</a>
-    </footer>
-</section>
-
-<section class="post-navigation">
-    {% if page.previous.title != null %}
-    <a class="prev" href="{{ site.baseurl }}{{ page.previous.url }}">&lt;&nbsp;{{ page.previous.title }}</a>
+    {% if page.img %}
+    <div class="card-thumbnail" style="background-image: url({{ site.postimgurl }}/{{ page.img }});">
+    </div>
+    {% else %}
     {% endif %}
-    {% if page.next.title != null %}
-    <a class="next" href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}&nbsp;&gt;</a>
-    {% endif %}
-</section>
 
-<section>
-<div id="disqus_thread"></div>
-</section>
+    <div class="card-content">
+    
+        <h1>{{ page.title }}</h1>
 
-{% include footer.html %}
+        <div class="post-info">
+            <time>{{ page.date | date_to_string }}</time>
+            <span>&nbsp;-&nbsp;</span>
+            <span>{{ page.category | upcase }}</span>
+        </div>
+
+        <article class="post-content">
+            {{ content }}
+        </article>
+
+        <ul class="post-link">
+            {% if page.previous.title != null %}
+            <li><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }} &lt;&lt;&lt;</a></li>
+            {% endif %}
+            {% if page.next.title != null %}
+            <li><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }} &gt;&gt;&gt;</a></li>
+            {% endif %}
+        </ul>
+
+        <div class="post-comment" id="disqus_thread"></div>
+
+    </div>
+
+</div>
 
 {% include disqus.html %}
-{% include baidu-analytics.html %}
-{% include google-analytics.html %}
-
-</body>
-</html>
