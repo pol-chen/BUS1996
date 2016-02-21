@@ -7,10 +7,10 @@ title: Posts
 
 {% for post in site.posts %}
 <div class="card-1">
-    {% if post.img %}
-    <div class="card-thumbnail" style="background-image: url({{ site.postimgurl }}/{{ post.img }});">
-    </div>
-    {% else %}
+    {% if post.cover %}
+    <div class="card-thumbnail" style="background-image: url({{ site.coverimgurl }}/{{ post.cover }});"></div>
+    {% elsif post.img %}
+    <div class="card-thumbnail" style="background-image: url({{ site.postimgurl }}/{{ post.img }});"></div>
     {% endif %}
 
     <div class="card-content">
@@ -22,7 +22,7 @@ title: Posts
         </div>
         <div class="post-excerpt">
         {% if post.content contains "<!-- more -->" %}
-            {{ post.content | split:"<!-- more -->" | first }}
+            {{ post.content | remove:"<hr>" | split:"<!-- more -->" | first }}
         {% else %}
             {{ post.content | strip_html | truncatewords:100 }}
         {% endif %}
