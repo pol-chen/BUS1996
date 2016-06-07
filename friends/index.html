@@ -8,7 +8,10 @@ title: Friends
 {% for friend in site.data.friends %}
 <div class="card-2">
     <div class="card-content-center">
-        {% if friend.avatar %}
+        {% if friend.avatarlink %}
+        <div class="post-avatar" style="background-image: url({{ friend.avatarlink}});">
+        </div>
+        {% elsif friend.avatar %}
         <div class="post-avatar" style="background-image: url({{ site.friendimgurl }}/{{ friend.avatar}});">
         </div>
         {% else %}
