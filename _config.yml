@@ -2,10 +2,10 @@ title: BUS1996
 description: Polaris Chen's Blog
 
 url: http://bus1996.me
-baseurl: 
+baseurl:
 permalink: /:title.html
 
-markdown: redcarpet
+markdown: kramdown
 highlight: pygments
 
 redcarpet:
