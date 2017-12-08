@@ -6,8 +6,24 @@
 - name: CPC
   blog: CPC's Blog
   link: http://cpcpc.me
+  avatarlink: https://avatars2.githubusercontent.com/u/7716468?s=400&v=4
 
 - name: Sorumi
   blog: Sorumi's Blog
   link: http://sorumi.github.io
-  avatar: sorumi.png
+  avatarlink: https://avatars3.githubusercontent.com/u/16506404?s=400&v=4
+
+- name: Christine
+  blog: Autumn
+  link: https://christinenju.github.io
+  avatar: christine.jpg
+
+- name: 冬瓜
+  blog: Desgard
+  link: http://www.desgard.com
+  avatarlink: http://www.desgard.com/assets/images/logo-new.png
+
+- name: JustZht
+  blog: Justin Fincher's Blog
+  link: http://www.justzht.com
+  avatarlink: https://avatars0.githubusercontent.com/u/8359912?s=400&v=4
