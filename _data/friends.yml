@@ -30,12 +30,12 @@
 
 - name: Hiki
   blog: Hiki's Blog
-  link: aneureka.github.io
+  link: https://aneureka.github.io
   avatarlink: https://avatars3.githubusercontent.com/u/15818441?s=400&v=4
 
 - name: Jennifer Zhang
   blog: Jennifer's Blog
-  link: jyzhangchn.github.io
+  link: https://jyzhangchn.github.io
   avatarlink: https://jyzhangchn.github.io/images/gavin.JPG
 
 - name: GarenFeather
